@@ -334,12 +334,16 @@ class MediaChromeRange extends globalThis.HTMLElement {
   }
 
   #onFocusIn = (): void => {
-    if (this.range.matches(':focus-visible')) {
-      const { style } = getOrInsertCSSRule(this.shadowRoot, ':host');
-      style.setProperty(
-        '--_focus-visible-box-shadow',
-        'var(--_focus-box-shadow)'
-      );
+    try {
+      if (this.range.matches(':focus-visible')) {
+        const { style } = getOrInsertCSSRule(this.shadowRoot, ':host');
+        style.setProperty(
+          '--_focus-visible-box-shadow',
+          'var(--_focus-box-shadow)'
+        );
+      }
+    } catch (err) {
+      // nothing
     }
   };
 
