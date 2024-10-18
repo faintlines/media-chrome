@@ -253,8 +253,8 @@ const projectRoot = path.join(__dirname, '..', '..');
 const distRoot = path.join(projectRoot, 'dist');
 const entryPoints = [
   path.join(projectRoot, 'dist', 'index.js'),
-  path.join(projectRoot, 'dist', 'menu', 'index.js'),
-  path.join(projectRoot, 'dist', 'media-theme-element.js')
+  // path.join(projectRoot, 'dist', 'menu', 'index.js'),
+  // path.join(projectRoot, 'dist', 'media-theme-element.js')
 ];
 const setupGlobalsAsync = async () => {
   const customElementNames = await import(
